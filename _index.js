@@ -1,8 +1,8 @@
 
-// import http-web-server nodejs core package; 
+// import http-web-server nodejs core package using commonJs; 
 const http = require('http');
 
-// Create the webserver event handler
+// Create the webserver event handler that will handle http requests from the browser.
 const server = http.createServer((req, res) => {
 
     res.writeHead(200, {'Content-Type':'text/html'});

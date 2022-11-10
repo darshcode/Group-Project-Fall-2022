@@ -1,10 +1,10 @@
 //This is test for merge branch to main
 
-// import third-party nodejs module Connect
-const connect = require('connect');
+// importing express using es6 expression import
+import express from "express";
 
 // instantiate app-server
-const app = connect();
+const app = express();
 
 // custom middleware
 function helloWorld(req, res, next){
