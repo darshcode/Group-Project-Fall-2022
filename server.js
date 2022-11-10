@@ -1,56 +1,58 @@
-//This is test for merge branch to main
+import debug from 'debug';
+debug('comp-229');
+import http from 'http';
 
-// importing express and third party modules using 3s6 format.
-import express from "express";
-import cookieParser from "cookie-parser";
-import logger from 'morgan';
-import session from "express-session";
+import app from './app/app.js';
 
-// es modules to fix __dirname
-import path, {dirname} from 'path';
-import { fileURLToPath } from "url";
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const PORT = normalizePort(process.env.PORT || 3000);
+app.set('port', PORT);
 
-// instantiate app-server
-const app = express();
+const server = http.createServer(app);
 
-//setup viewEngine EJS
-app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'ejs');
-app.set('view engine', 'ejs');
+server.listen(PORT);
+server.on('error', onError);
+server.on('listening', onListening);
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
-app.use(session({
-    secret: 'itsASecret', saveUninitialized:false,
-    resave:false,
-}))
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+    if (isNaN(port)) {
+        return val;
+    }
 
+    if (port >= 0) {
+        return port;
+    }
 
+    return false;
+}
 
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
 
-// custom middleware
-function helloWorld(req, res, next){
-    res.setHeader('Content-Type','text/plain');
-    res.end('Hello World');
-};
+    let bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
 
-// custom middleware
-function byeWorld(req, res, next){
-    res.setHeader('Content-Type','text/plain');
-    res.end('Good Bye World');
-};
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
 
-// add middleware to connect application
-app.use('/hello',helloWorld);
-app.use('/bye', byeWorld);
-
-// run app
-app.listen(3000);
-
-console.log('Server running at http://localhost:3000');
-
-
+function onListening() 
+{
+  let addr = server.address();
+  let bind = 'pipe ' + addr;
+  debug('Listening on ' + bind);
+}
