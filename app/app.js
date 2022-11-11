@@ -18,6 +18,8 @@ import { MongoURI, Secret } from "../config/config.js";
 
 // Import Router
 import indexRouter from './routes/index.route.server.js';
+import surveyRouter from './routes/surveys.route.server.js';
+
 
 // instantiate app-server
 const app = express();
@@ -49,6 +51,9 @@ app.use(session({
 
 // Use Routes
 app.use('/', indexRouter);
+app.use('/', surveyRouter);
+
+
 
 // run app
 // app.listen(3000);
