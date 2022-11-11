@@ -1,30 +1,58 @@
-//This is test for merge branch to main
+import debug from 'debug';
+debug('comp-229');
+import http from 'http';
 
-// import third-party nodejs module Connect
-const connect = require('connect');
+import app from './app/app.js';
 
-// instantiate app-server
-const app = connect();
+const PORT = normalizePort(process.env.PORT || 3000);
+app.set('port', PORT);
 
-// custom middleware
-function helloWorld(req, res, next){
-    res.setHeader('Content-Type','text/plain');
-    res.end('Hello World');
-};
+const server = http.createServer(app);
 
-// custom middleware
-function byeWorld(req, res, next){
-    res.setHeader('Content-Type','text/plain');
-    res.end('Good Bye World');
-};
+server.listen(PORT);
+server.on('error', onError);
+server.on('listening', onListening);
 
-// add middleware to connect application
-app.use('/hello',helloWorld);
-app.use('/bye', byeWorld);
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+    if (isNaN(port)) {
+        return val;
+    }
 
-// run app
-app.listen(3000);
+    if (port >= 0) {
+        return port;
+    }
 
-console.log('Server running at http://localhost:3000');
+    return false;
+}
 
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
 
+    let bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+function onListening() 
+{
+  let addr = server.address();
+  let bind = 'pipe ' + addr;
+  debug('Listening on ' + bind);
+}
