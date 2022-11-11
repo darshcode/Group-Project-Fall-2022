@@ -1,4 +1,7 @@
 // Index Controller
+//this section exports the function needed to render pages during click events. 
+//these function are used by: 
+                            //routes --> index.route.server.js
 
 export function displayHomePage(req, res, next){
     res.render('index', { title: 'Home', page: 'home' });

@@ -1,3 +1,4 @@
+//starts the aplication
 // IIFE 
 (function (){
     function Start(){

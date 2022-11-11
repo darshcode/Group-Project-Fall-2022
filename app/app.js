@@ -36,7 +36,7 @@ app.use(session({
 // Use Routes
 app.use('/', indexRouter);
 
-// // run app
+// run app
 // app.listen(3000);
 
 // console.log('Server running at http://localhost:3000');
