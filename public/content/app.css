@@ -1,3 +1,7 @@
 #myDIV{
     display: block;
 }
+.survey-image{
+    margin-left: -50px;
+    margin-top: 50px;
+}
