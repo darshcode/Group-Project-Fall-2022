@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const surveySchema = new Schema({
-    test : String
+    surveyName : String,
+    surveyDescription : String
     // Survey content is TBD
 
 },{

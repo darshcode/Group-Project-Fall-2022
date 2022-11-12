@@ -6,12 +6,21 @@
             <form class="form" method="POST">
                 <input type="hidden" name="id" value="<%= survey._id %>" >
                 <div class="form-group">
-                    <label for="nameTextField">Survey TEST</label>
+                    <label for="nameTextField">Survey Name</label>
                     <input type="text" class="form-control"
                     id="nameTextField"
-                    placeholder="Enter the Survey Title"
-                    name="test" 
-                    value="<%= survey.test %>"
+                    placeholder="Enter the Survey Name"
+                    name="surveyName" 
+                    value="<%= survey.surveyName %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="nameTextField">Survey Description</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Survey Description"
+                    name="surveyDescription" 
+                    value="<%= survey.surveyDescription %>"
                     required>
                 </div>
 

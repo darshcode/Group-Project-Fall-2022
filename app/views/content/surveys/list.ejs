@@ -9,7 +9,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col" class="text-center">#</th>
-                        <th scope="col">Test</th>
+                        <th scope="col">Survey Name</th>
+                        <th scope="col">Survey Description</th>
+
                         
                         <th></th>
                         <th></th>
@@ -20,7 +22,8 @@
                     <% for(let count = 0; count < surveys.length; count++) { %>
                         <tr>
                             <th scope="row" class="text-center"><%= count + 1 %></th>
-                            <td><%= surveys[count].test %></td>
+                            <td><%= surveys[count].surveyName %></td>
+                            <td><%= surveys[count].surveyDescription %></td>
                            
                             
                             <td class="text-center col-1">
