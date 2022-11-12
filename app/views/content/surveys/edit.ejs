@@ -33,15 +33,51 @@
                         <i class="fas fa-undo"></i> Cancel</a>
 
             </form>
-            <Hr>
-            <button class="btn btn-primary" onclick="myFunction()">
-                <i class="fas fa-add"></i> Add survey content</button>
-                <div id="myDIV">
-                    <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
-                    <button class="btn btn-primary"><i class="fas fa-add"></i> Add radio button</button>
-                    <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button>
-                  </div>
+            
         </div>
+        <div class="container">
+        <h1>Question List</h1>
+       
+        
+         <div class="row">
+            <div class="col">
+    
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="text-center">Question #</th>
+                        <th scope="col">Question Content</th>
+                        <th scope="col">Question Answer</th>
+                        
+
+                        
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="question List">
+                    <!-- Repeatable Rows -->
+                
+                           
+                            
+                            
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+        </div>
+        
+
 
     </div>
+    
+        <button class="btn btn-primary" onclick="myFunction()">
+            <i class="fas fa-add"></i> Add Question</button>
+            <div id="myDIV">
+            <hr>
+                <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
+                <button class="btn btn-primary"><i class="fas fa-add"></i> Add radio button</button>
+                <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button>
+            </div>
 </div>
