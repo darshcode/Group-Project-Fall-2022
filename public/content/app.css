@@ -54,6 +54,7 @@ Eva Fan        301238820  */
     transition: ease-out 0.3s;
     font-size: 1.5rem;
     outline: none;
+    margin-left: 40px;
 }
 .btn-survey:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
