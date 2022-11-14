@@ -44,19 +44,19 @@ Eva Fan        301238820  */
     padding: 0rem 12rem;
 }
 .btn-survey{
-    width: 260px;
+    width: 200px;
     height: 60px;
     border: none;
-    color:#000;
-    background-color: #fdcc04;
+    color:#fdcc04;
+    background-color: #242222;
     border-radius: 40px;
     box-shadow: inset 0 0 0 0 rgb(255, 0, 68);
     transition: ease-out 0.3s;
-    font-size: 2rem;
+    font-size: 1.5rem;
     outline: none;
 }
 .btn-survey:hover{
-    box-shadow: inset 260px 0 0 0 rgb(255, 0, 68);
+    box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
     cursor: pointer;
     color: #fff;
 }
