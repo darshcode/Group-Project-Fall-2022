@@ -1,5 +1,5 @@
 /*Web App Name: Take The Survey
-File Name: index.controller.server.js;
+File Name: app.js;
 Group Name: Team A+;
 Date: November 10, 2022
 Student Name      Student ID
