@@ -23,6 +23,12 @@ import path, {dirname} from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+//Auth Step 1 -import modules
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import flash from 'connect-flash';
+
+
 //Import Mongoose Module, we are importing mongoose module so we can connect to our databse.
 import mongoose from 'mongoose';
 
