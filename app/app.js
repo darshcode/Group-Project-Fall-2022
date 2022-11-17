@@ -16,12 +16,14 @@ import cookieParser from "cookie-parser";
 import logger from 'morgan';
 import session from "express-session";
 
-// ES Modules fix for __dirname 
+// ES Modules fix for __dirname
+//explanation: we imported path and dirname from core packages. we use them in conjunction to create a path for the constant __dirname. >>
+//>>that we will use later
 import path, {dirname} from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-//Import Mongoose Module
+//Import Mongoose Module, we are importing mongoose module so we can connect to our databse.
 import mongoose from 'mongoose';
 
 
@@ -30,6 +32,8 @@ import { MongoURI, Secret } from "../config/config.js";
 
 // Import Router
 import indexRouter from './routes/index.route.server.js';
+
+// Import Router from index.route.server.js
 import surveyRouter from './routes/surveys.route.server.js';
 
 
@@ -47,6 +51,7 @@ db.on('error', () => console.log('Mongo Connection Error'));
 
 
 // setup ViewEngine EJS
+//We are setting our application's views and current directory where our app will look for ceratain stuff
 app.set('views', path.join(__dirname,'/views'));
 app.set('view engine', 'ejs');
 
@@ -54,10 +59,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public'))); // all files uploaded to the browser when loading to be used in app.
 app.use(session({
-    secret: Secret,
-    saveUninitialized: false,
+    secret: Secret, //if we dont include a secret, the public has access to some of our data that we dont want them to be able to see. thats why we use a secret'/ encryption.
+    saveUninitialized: false,   //disables saving data when realoading.
     resave: false
 }));
 

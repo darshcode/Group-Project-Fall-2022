@@ -10,11 +10,7 @@ Faiyaz Muhammad   301227442
 Sheila Donnelly   822281549
 Wilson Wu         3012453494*/
 
-// Index Controller
-//this section exports the function needed to render pages during click events. 
-//these function are used by: 
-                            //routes --> index.route.server.js
-                            //test
+// can be deleted?
 
 export function displayHomePage(req, res, next){
     res.render('index', { title: 'Home', page: 'home' });

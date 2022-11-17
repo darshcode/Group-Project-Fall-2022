@@ -16,6 +16,7 @@ import http from 'http';
 
 import app from './app/app.js';
 
+//this will automatically set a port if not 3000.
 const PORT = normalizePort(process.env.PORT || 3000);
 app.set('port', PORT);
 

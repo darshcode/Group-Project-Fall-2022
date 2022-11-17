@@ -11,6 +11,14 @@ Eva Fan        301238820 -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- this is our main html file, notice how i made this comment. this is called a line comment. -->
+<!-- this index file is being redered by the surveys.controller.server.js under controllers.-->
+<!--this is the title we imported from our components under views.  
+    Notice how we used [less]%=  [xyz]  %[greater] to call a variable from controller.
+    Notice how we used [less]%-  [include ('/path to partials in componenets.') ]  %[greater] to call a partial from components.-->
+
     <title>
         <%= title %>    
     </title>
@@ -24,6 +32,7 @@ Eva Fan        301238820 -->
     <%- include('components/header.ejs') %>   
 
     <!-- main -->
+    <!--notice how this one uses the page as a paramater. we are then retrieving the page from under content.-->
     <main>
         <%- include('content/' + page + '.ejs') %>        
     </main>   

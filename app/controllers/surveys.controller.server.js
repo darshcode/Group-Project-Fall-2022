@@ -12,6 +12,15 @@ Wilson Wu         3012453494*/
 
 import surveyModel from '../models/surveys.js';
 
+// Index Controller
+//this section exports the function needed to render pages during click events. 
+//these function are used by:       routes --> index.Route.server.js
+//this code is related to views
+//the res part of res.render mean response.  the render method renders the index file under index.ejs 
+//and uses {title and pages under components.} so we have two parameters.. 
+//also notice that the part in {curly braces is in jason format}.
+//finally notice the page: home. this is another variable were passing to index.ejs in the main article. by using this we can refer to the right page.
+
 export function DisplaySurveysList(req, res, next){
     surveyModel.find(function(err, surveysCollection) {
         if(err){
