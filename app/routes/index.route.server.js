@@ -25,12 +25,6 @@ router.get('/',displayHomePage);
 router.get('/home',displayHomePage);
 
 
-//===============================================================
-// Alex: I don't think we need following controller
-//===============================================================
-// router.get('/about', displayAboutPage );
-// router.get('/projects', displayProjectsPage );
-// router.get('/services', displayServicesPage );
-// router.get('/contact', displayContactPage );
+
 
 export default router;
