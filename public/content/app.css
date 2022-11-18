@@ -166,10 +166,28 @@ Wilson Wu         3012453494*/
 .container a.btn-danger{
     background-color:#242222;
     cursor: pointer;
-    color: #fff;
+    color: #fdcc04;
 }
 .container a.btn-danger:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
     cursor: pointer;
+    color: #fff;
+}
+.btn-primary{
+    background-color:#fdcc04;
+    border: none;
+    color: #000;
+}
+.btn-primary:hover{
+    box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
+    cursor: pointer;
+    color: #fff;
+}
+.container a.btn-warning{
+    background-color:#242222;
+    color: #fdcc04;
+}
+.container a.btn-warning:hover{
+    box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
     color: #fff;
 }
