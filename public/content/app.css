@@ -85,19 +85,18 @@ Wilson Wu         3012453494*/
     cursor: pointer;
     color: #fff;
 }
-.container{
+/* .container{
     width:2000px;
     height: 1000px;
     background-color: #fdcc04;
   
- 
-}
+} */
 #loginButton{
     width: 140px;
     height: 50px;
     border: none;
-    color:#fdcc04;
-    background-color: #242222;
+    background-color:#fdcc04 ;
+    color: #242222;
     border-radius: 40px;
     box-shadow: inset 0 0 0 0 rgb(255, 0, 68);
     transition: ease-out 0.2s;
@@ -105,7 +104,7 @@ Wilson Wu         3012453494*/
     outline: none;
     margin-bottom: 10px;
     margin-right: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 #loginButton:hover{
@@ -126,7 +125,7 @@ Wilson Wu         3012453494*/
     font-size: 1.2rem;
     outline: none;
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #cancelButton:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
@@ -146,12 +145,31 @@ Wilson Wu         3012453494*/
 .link:hover{
     color: #006400;
 }
-/* h1{
-    margin-top: 50px;
-} */
+
 #username{
     margin-top: 5px;
 }
 #password{
     margin-top: 5px;
+}
+.container a{
+    color: #000;
+    background-color:#fdcc04;
+    border: none;
+}
+.container a:hover{
+    box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
+    cursor: pointer;
+    color: #fff;
+}
+
+.container a.btn-danger{
+    background-color:#242222;
+    cursor: pointer;
+    color: #fff;
+}
+.container a.btn-danger:hover{
+    box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
+    cursor: pointer;
+    color: #fff;
 }
