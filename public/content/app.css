@@ -139,10 +139,7 @@ Wilson Wu         3012453494*/
     margin-top: 20px;
     
 }
-.link{   
-    color:rgb(255, 0, 68);
-}
-.link:hover{
+.container link:hover{
     color: #006400;
 }
 
@@ -153,9 +150,11 @@ Wilson Wu         3012453494*/
     margin-top: 5px;
 }
 .container a{
+    transition: ease-out 0.2s;
     color: #000;
     background-color:#fdcc04;
     border: none;
+   
 }
 .container a:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
@@ -164,9 +163,11 @@ Wilson Wu         3012453494*/
 }
 
 .container a.btn-danger{
+    transition: ease-out 0.2s;
     background-color:#242222;
     cursor: pointer;
     color: #fdcc04;
+   
 }
 .container a.btn-danger:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
@@ -174,6 +175,7 @@ Wilson Wu         3012453494*/
     color: #fff;
 }
 .btn-primary{
+    transition: ease-out 0.2s;
     background-color:#fdcc04;
     border: none;
     color: #000;
@@ -184,8 +186,10 @@ Wilson Wu         3012453494*/
     color: #fff;
 }
 .container a.btn-warning{
+    transition: ease-out 0.2s;
     background-color:#242222;
     color: #fdcc04;
+    
 }
 .container a.btn-warning:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
