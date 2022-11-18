@@ -12,6 +12,9 @@ Wilson Wu         3012453494*/
 
 import surveyModel from '../models/surveys.js';
 
+// import DisplayName Utility method
+import { UserDisplayName } from '../utils/index.js';
+
 // Index Controller
 //this section exports the function needed to render pages during click events. 
 //these function are used by:       routes --> index.Route.server.js
@@ -28,12 +31,12 @@ export function DisplaySurveysList(req, res, next){
             res.end(err);
         }
 
-        res.render('index', {title: 'Survey List', page: 'surveys/list', surveys: surveysCollection});
+        res.render('index', {title: 'Survey List', page: 'surveys/list', surveys: surveysCollection, displayName: UserDisplayName(req)});
     })
 }
 
 export function DisplaySurveysAddPage(req, res, next){
-    res.render('index', { title: 'Add Survey', page: 'surveys/edit', survey: {} });
+    res.render('index', { title: 'Add Survey', page: 'surveys/edit', survey: {}, displayName: UserDisplayName(req) });
 }
 
 export function ProcessSurveysAddPage(req, res, next){
@@ -63,7 +66,7 @@ export function DisplaySurveysEditPage(req, res, next){
             res.end(err);
         }
 
-        res.render('index', { title: 'Edit Survey', page: 'surveys/edit', survey: survey });
+        res.render('index', { title: 'Edit Survey', page: 'surveys/edit', survey: survey, displayName: UserDisplayName(req) });
     });    
 }
 

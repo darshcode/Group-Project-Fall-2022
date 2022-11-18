@@ -12,8 +12,10 @@ Wilson Wu         3012453494 -->
 
 <div class="container">
     <h1>Survey List</h1>
+    <% if(displayName) { %>
     <a href="/survey-add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Add a Survey</a>
+        <% } %>
     <div class="row">
         <div class="col">
     
@@ -24,9 +26,10 @@ Wilson Wu         3012453494 -->
                         <th scope="col">Survey Name</th>
                         <th scope="col">Survey Description</th>
 
-                        
+                        <% if(displayName) { %>
                         <th></th>
                         <th></th>
+                        <% } %>
                     </tr>
                 </thead>
                 <tbody id="surveyList">
@@ -37,7 +40,7 @@ Wilson Wu         3012453494 -->
                             <td><%= surveys[count].surveyName %></td>
                             <td><%= surveys[count].surveyDescription %></td>
                            
-                            
+                            <% if(displayName) { %>
                             <td class="text-center col-1">
                                 <a href="/survey-edit/<%= surveys[count]._id %>"
                                     class="btn btn-primary btn-sm">
@@ -49,6 +52,7 @@ Wilson Wu         3012453494 -->
                                     class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash-alt"></i> Delete</a>
                             </td>
+                            <% } %>
                         </tr>
                     <% } %>
                 </tbody>

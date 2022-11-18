@@ -21,16 +21,21 @@ Wilson Wu         3012453494 -->
         <li class="nav-item">
           <a class="nav-link <%= (page == 'home') ? 'active' : ''; %>" aria-current="page" href="/home"><i class="fa-solid fa-house-user"></i> Home</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link <%= (page == 'survey-list') ? 'active' : ''; %>" aria-current="page" href="/survey-list"><i class="fa-solid fa-table-list fa-lg"></i> Survey List</a>
-
-          <li class="nav-item">
-            <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/register"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-
-            <li class="nav-item">
-              <a class="nav-link <%= (page == 'logout') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </li>
+       <% if(displayName) { %>
+        
+        <li class="nav-item">
+          <a class="nav-link <%= (page == 'logout') ? 'active' : ''; %>" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </li>
+        
+      
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          </li>
+          <% } %>
       </ul>
     </div>
   </div>

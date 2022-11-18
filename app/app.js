@@ -47,6 +47,9 @@ import indexRouter from './routes/index.route.server.js';
 // Import Router from index.route.server.js
 import surveyRouter from './routes/surveys.route.server.js';
 
+//Import Auth router
+import authRouther from './routes/auth.route.server.js';
+
 
 // instantiate app-server
 const app = express();
@@ -71,6 +74,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // all files uploaded to the browser when loading to be used in app.
+
+//Auth Step 4 - Setup Express Session
 app.use(session({
     secret: Secret, //if we dont include a secret, the public has access to some of our data that we dont want them to be able to see. thats why we use a secret'/ encryption.
     saveUninitialized: false,   //disables saving data when realoading.
@@ -90,6 +95,7 @@ passport.use(User.createStrategy());
 // Use Routes
 app.use('/', indexRouter);
 app.use('/', surveyRouter);
+app.use('/',authRouther);
 
 //Auth Step 8 - Setup serialization and deserialization
 passport.serializeUser(User.serializeUser());
