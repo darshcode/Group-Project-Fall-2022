@@ -45,10 +45,10 @@ Wilson Wu         3012453494 -->
             </form>
             
         </div>
-        <div class="container">
+<!----------------------------------------Question list------------------------------------------->
+        <!-- <div class="container">
         <h1>Question List</h1>
        
-        
          <div class="row">
             <div class="col">
     
@@ -59,34 +59,74 @@ Wilson Wu         3012453494 -->
                         <th scope="col">Question Content</th>
                         <th scope="col">Question Answer</th>
                         
-
-                        
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="question List">
-                    <!-- Repeatable Rows -->
-                
-                           
-                            
-                            
-                    
+                <tbody id="question List">   
+                                          
                 </tbody>
             </table>
         </div>
     </div>
-        </div>
-
+        </div> 
+<!--------------------------------------------------------------------------------------------------->
     </div>
-    
+
         <button class="btn btn-primary" onclick="myFunction()">
-            <i class="fas fa-add"></i> Add Question</button>
+            <i class="fas fa-add"></i> Short Answer</button>
             <div id="myDIV">
+<!------------------------------------------------------------------------------------------------>
+<form class="form" method="POST">
+    <input type="hidden" name="id" value="<%= survey._id %>" >
+    <div class="form-group">
+        <label for="nameTextField">Your Question</label>
+        <input type="text" class="form-control"
+        id="nameTextField"
+        placeholder="Please Enter Your Question Here"
+        name="surveyName" 
+        value="<%= survey.surveyName %>"
+        required>
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+        <i class="fas fa-edit"></i> Submit</button>
+    
+        <a href="/survey-list" class="btn btn-warning">
+            <i class="fas fa-undo"></i> Cancel</a>
+
+</form>
+<!---------------------There need one function for Multiple Choice Button--------------------->
+<br>
+<button class="btn btn-primary" onclick="myFunction()">
+    <i class="fas fa-add"></i> Multiple Choice</button>
+    <div id="myDIV">
+
+        <form class="form" method="POST">
+    <input type="hidden" name="id" value="<%= survey._id %>" >
+    <div class="form-group">
+        <label for="nameTextField">Your Question</label>
+        <input type="text" class="form-control"
+        id="nameTextField"
+        placeholder="Please Enter Your Question Here"
+        name="surveyName" 
+        value="<%= survey.surveyName %>"
+        required>
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+        <i class="fas fa-edit"></i> Submit</button>
+    
+        <a href="/survey-list" class="btn btn-warning">
+            <i class="fas fa-undo"></i> Cancel</a>
+
+</form>
+      
+<!------------------------------------------------------------------------------------------------->
                 
             <hr>
-                <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
+                <!-- <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
                 <button class="btn btn-primary"><i class="fas fa-add"></i> Add radio button</button>
-                <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button>
+                <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button> -->
             </div>
 </div>
