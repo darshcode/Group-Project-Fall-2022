@@ -16,7 +16,9 @@ const Schema = mongoose.Schema;
 
 const surveySchema = new Schema({
     surveyName : String,
-    surveyDescription : String
+    surveyDescription : String,
+    questionType: String
+
     // Survey content is TBD
 
 },{

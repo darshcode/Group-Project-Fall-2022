@@ -1,3 +1,4 @@
+
 <!-- Web App Name: Take The Survey
 File Name: edit.ejs;
 Group Name: Team A+;
@@ -8,7 +9,7 @@ Eva Fan           301238820
 Darshmeen Dhillon 300689994
 Faiyaz Muhammad   301227442
 Sheila Donnelly   822281549
-Wilson Wu         301243494 -->
+Wilson Wu         3012453494 -->
 
 <div class="container">
     <div class="row">
@@ -35,6 +36,65 @@ Wilson Wu         301243494 -->
                     value="<%= survey.surveyDescription %>"
                     required>
                 </div>
+<!------------------------------------------Question Type----------------------------------->
+                <div class="container">
+        <h1>Survey Type</h1>
+       
+         <div class="row">
+            <div class="col">
+    
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <!-- <th scope="col" class="text-center">Question Type</th> -->
+                        <th scope="col">Short Answer</th>
+                        <th scope="col">Multiple Choice</th>
+                        
+                        <!-- <th></th>
+                        <th></th> -->
+                    </tr>
+                </thead>
+                <tbody id="question List">   
+                                          
+                </tbody>
+            </table>
+        </div>
+    </div>
+        </div> 
+                <button class="btn btn-primary" >
+                   Type: Short Answer</button>
+
+                <div class="form-group">
+                    <label for="nameTextField">Your Question</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter Your Question Here"
+                    name="questionType" 
+                    value="<%= survey.questionType %>"
+                    required>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                
+                    <a href="/survey-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                        <br>
+                        <br>
+
+                <button class="btn btn-primary">
+                  Type: Multiple Choice</button>
+
+                  <div class="form-group">
+                    <label for="nameTextField">Your Question</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter Your Question Here"
+                    name="questionType" 
+                    value="<%= survey.questionType %>"
+                    required>
+                </div>
+
 
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
@@ -44,10 +104,10 @@ Wilson Wu         301243494 -->
 
             </form>
             
-        </div>
+        </div> 
 <!----------------------------------------Question list------------------------------------------->
         <!-- <div class="container">
-        <h1>Question List</h1>
+        <h1>Question Type</h1>
        
          <div class="row">
             <div class="col">
@@ -73,60 +133,69 @@ Wilson Wu         301243494 -->
 <!--------------------------------------------------------------------------------------------------->
     </div>
 
-        <button class="btn btn-primary" onclick="myFunction()">
+        <!-- <button class="btn btn-primary" onclick="myFunction()">
             <i class="fas fa-add"></i> Short Answer</button>
-            <div id="myDIV">
+            <div id="myDIV"> -->
+                <!-- <button class="btn btn-primary" >
+                    <i class="fas fa-add"></i> Short Answer</button> -->
+                  
 <!------------------------------------------------------------------------------------------------>
 <form class="form" method="POST">
     <input type="hidden" name="id" value="<%= survey._id %>" >
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="nameTextField">Your Question</label>
         <input type="text" class="form-control"
         id="nameTextField"
-        placeholder="Please Enter Your Question Here"
-        name="surveyName" 
-        value="<%= survey.surveyName %>"
+        placeholder="Enter Your Question Here"
+        name="questionType" 
+        value="<%= survey.questionType %>"
         required>
-    </div>
+    </div> -->
 
-    <button class="btn btn-primary" type="submit">
+    <!-- <button class="btn btn-primary" type="submit">
         <i class="fas fa-edit"></i> Submit</button>
     
         <a href="/survey-list" class="btn btn-warning">
-            <i class="fas fa-undo"></i> Cancel</a>
+            <i class="fas fa-undo"></i> Cancel</a> -->
 
 </form>
 <!---------------------There need one function for Multiple Choice Button--------------------->
 <br>
-<button class="btn btn-primary" onclick="myFunction()">
+<!-- <button class="btn btn-primary">
     <i class="fas fa-add"></i> Multiple Choice</button>
-    <div id="myDIV">
-
-        <form class="form" method="POST">
+    -->
+    <!-- <form class="form" method="POST">
     <input type="hidden" name="id" value="<%= survey._id %>" >
     <div class="form-group">
         <label for="nameTextField">Your Question</label>
         <input type="text" class="form-control"
         id="nameTextField"
-        placeholder="Please Enter Your Question Here"
+        placeholder="Enter Your Question Here"
         name="surveyName" 
         value="<%= survey.surveyName %>"
         required>
-    </div>
+    </div> -->
 
-    <button class="btn btn-primary" type="submit">
+    <!-- <button class="btn btn-primary" type="submit">
         <i class="fas fa-edit"></i> Submit</button>
     
         <a href="/survey-list" class="btn btn-warning">
-            <i class="fas fa-undo"></i> Cancel</a>
+            <i class="fas fa-undo"></i> Cancel</a> -->
 
 </form>
       
 <!------------------------------------------------------------------------------------------------->
                 
-            <hr>
+            
                 <!-- <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
                 <button class="btn btn-primary"><i class="fas fa-add"></i> Add radio button</button>
                 <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button> -->
             </div>
 </div>
+
+
+
+
+
+
+
