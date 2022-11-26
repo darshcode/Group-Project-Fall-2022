@@ -36,6 +36,24 @@ Wilson Wu         3012453494 -->
                     value="<%= survey.surveyDescription %>"
                     required>
                 </div>
+                <div class="form-group">
+                    <label for="creationDateField">Survey Creation Date</label>
+                    <input type="date" class="form-control"
+                    id="creationDateField"
+                    placeholder="Enter the Survey Creation Date"
+                    name="surveyCreationDate" 
+                    value="<%= survey.surveyCreationDate %>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="surveyExpiryField">Survey Expiry Date</label>
+                    <input type="date" class="form-control"
+                    id="surveyExpiryField"
+                    placeholder="Enter the Survey Expiry Date"
+                    name="surveyExpiryDate" 
+                    value="<%= survey.surveyExpiryDate %>"
+                    required>
+                </div>
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
                 
