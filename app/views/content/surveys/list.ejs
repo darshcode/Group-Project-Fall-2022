@@ -40,7 +40,8 @@ Wilson Wu         301243494 -->
                             <th scope="row" class="text-center"><%= count + 1 %></th>
                             <td><%= surveys[count].surveyName %></td>
                             <td><%= surveys[count].surveyDescription %></td>
-                           
+                          
+
                             <% if(displayName) { %>
                             <td class="text-center col-1">
                                 <a href="/survey-edit/<%= surveys[count]._id %>"

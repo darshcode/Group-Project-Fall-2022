@@ -12,6 +12,7 @@ Wilson Wu         3012453494*/
 
 *{
     box-sizing: border-box;
+   
 }
 .hero{
     background-color: #fdcc04;
@@ -84,9 +85,10 @@ Wilson Wu         3012453494*/
 /* .container{
     width:2000px;
     height: 1000px;
-    background-color: #fdcc04;
-  
+    background-color: #fdcc04; 
+
 } */
+
 #loginButton{
     width: 140px;
     height: 50px;
@@ -175,6 +177,7 @@ Wilson Wu         3012453494*/
     background-color:#fdcc04;
     border: none;
     color: #000;
+   
 }
 .btn-primary:hover{
     box-shadow: inset 200px 0 0 0 rgb(255, 0, 68);
