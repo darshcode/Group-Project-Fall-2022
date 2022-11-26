@@ -26,6 +26,8 @@ Wilson Wu         301243494 -->
                         <th scope="col" class="text-center">#</th>
                         <th scope="col">Survey Name</th>
                         <th scope="col">Survey Description</th>
+                        <th scope="col">Survey Creation Date</th>
+                        <th scope="col">Survey Expiry Date</th>
 
                         <% if(displayName) { %>
                         <th></th>
@@ -40,6 +42,9 @@ Wilson Wu         301243494 -->
                             <th scope="row" class="text-center"><%= count + 1 %></th>
                             <td><%= surveys[count].surveyName %></td>
                             <td><%= surveys[count].surveyDescription %></td>
+                            <td><%= surveys[count].surveyCreationDate %></td>
+                            <td><%= surveys[count].surveyExpiryDate %></td>
+                            
                           
 
                             <% if(displayName) { %>
