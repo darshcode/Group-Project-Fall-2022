@@ -44,6 +44,8 @@ export function ProcessSurveysAddPage(req, res, next){
     let newSurvey = surveyModel({
         surveyName: req.body.surveyName,
         surveyDescription : req.body.surveyDescription,
+        surveyCreationDate : req.body.surveyCreationDate,
+        surveyExpiryDate : req.body.surveyExpiryDate,
         questionType: req.body.questionType,
         questionTypeOne: req.body.questionTypeOne,
         questionTypeTwo: req.body.questionTypeTwo
@@ -81,6 +83,8 @@ export function ProcessSurveysEditPage(req, res, next){
         _id: req.body.id,
         surveyName: req.body.surveyName,
         surveyDescription : req.body.surveyDescription,
+        surveyCreationDate : req.body.surveyCreationDate,
+        surveyExpiryDate : req.body.surveyExpiryDate,
         questionType: req.body.questionType,
         questionTypeOne: req.body.questionTypeOne,
         questionTypeTwo: req.body.questionTypeTwo
