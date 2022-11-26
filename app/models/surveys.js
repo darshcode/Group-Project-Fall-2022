@@ -17,6 +17,8 @@ const Schema = mongoose.Schema;
 const surveySchema = new Schema({
     surveyName : String,
     surveyDescription : String,
+    surveyCreationDate : Date,
+    surveyExpiryDate : Date,
     questionType: String,
     questionTypeOne: String
 
