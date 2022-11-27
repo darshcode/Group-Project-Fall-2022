@@ -1,5 +1,5 @@
 /*Web App Name: Take The Survey
-File Name: surverys.js;
+File Name: user.js;
 Group Name: Team A+;
 Date: November 26, 2022
 Student Name      Student ID
