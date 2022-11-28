@@ -50,6 +50,9 @@ import surveyRouter from './routes/surveys.route.server.js';
 //Import Auth router
 import authRouther from './routes/auth.route.server.js';
 
+//Import Question router
+import questionRouter from "./routes/questions.route.server.js";
+
 
 // instantiate app-server
 const app = express();
@@ -95,7 +98,8 @@ passport.use(User.createStrategy());
 // Use Routes
 app.use('/', indexRouter);
 app.use('/', surveyRouter);
-app.use('/',authRouther);
+app.use('/', authRouther);
+app.use('/', questionRouter);
 
 //Auth Step 8 - Setup serialization and deserialization
 passport.serializeUser(User.serializeUser());
