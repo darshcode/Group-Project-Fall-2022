@@ -26,6 +26,7 @@ Wilson Wu         3012453494 -->
                     <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Survey Name"
                         name="surveyName" value="<%= survey.surveyName %>" required>
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="nameTextField">Survey Description</label>
                     <input type="text" class="form-control" id="nameTextField"
@@ -38,24 +39,29 @@ Wilson Wu         3012453494 -->
                 <!------------------------------------------Section 2, setting date expiry----------------------------------------------->
 
                 <!-- DELETE ,  edit this with system date. check comments below in script section.-->
+                <br>
                 <div class="form-group">
                     <label for="creationDateField">Survey Creation Date</label>
                     <input type="date" class="form-control" id="creationDateField"
                         placeholder="Enter the Survey Creation Date" name="surveyCreationDate"
                         value="<%= survey.surveyCreationDate %>" required>
                 </div>
+                <br>
 
                 <!--setting expiry date-->
+                
                 <div class="form-group">
                     <label for="surveyExpiryField">Survey Expiry Date</label>
                     <input type="date" class="form-control" id="surveyExpiryField"
                         placeholder="Enter the Survey Expiry Date" name="surveyExpiryDate"
                         value="<%= survey.surveyExpiryDate %>" required>
                 </div>
+                <br>
 
                 <!------------------------------------------Section 3, types of question we want to create.------------------------------->
                 <div>
-                    <h3>Survey Type</h3>
+                    <br>
+                    <h2>Survey Type</h2>
                     <!--two Radio buttons.-->
                     <label> <input type="radio" name="QuestionType" value="multipleChoice" id="choice_id">
                         Multiple Choice</label> &emsp;
@@ -78,7 +84,15 @@ Wilson Wu         3012453494 -->
                     <p id="onBrowserDate"></p>
                     <p> this was printed using javascript, each numeric set is a single entity. 
                         we can use this data in the background and replace above creation date field.</p>
+                      
                 </div>
+                
+          
+               
+               <p></p>
+               
+
+
             </form>
         </div>
     </div>
@@ -104,10 +118,14 @@ Wilson Wu         3012453494 -->
 
     onBrowser.innerHTML = "todays date is " + today;
 
+
+
+
 //alternatively, we can get the full date in JSON format.
     /* let jSon = currentDate.toJSON
     onBrowser.innerHTML = today;*/
-
+ let choice =document.getElementById(choice_id);
+   
 
 //how to compate dates, one method.
     /* if (someday > today) {
