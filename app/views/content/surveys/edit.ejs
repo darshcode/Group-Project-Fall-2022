@@ -1,4 +1,3 @@
-
 <!-- Web App Name: Take The Survey
 File Name: edit.ejs;
 Group Name: Team A+;
@@ -14,61 +13,128 @@ Wilson Wu         3012453494 -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-        <h1><%= title %></h1>
+            <br>
+            <h1>
+                <%= title %>
+            </h1>
 
+            <!------------------------------------------Section 1, Name and description of of survey to be edited.----------------------------------->
             <form class="form" method="POST">
-                <input type="hidden" name="id" value="<%= survey._id %>" >
+                <input type="hidden" name="id" value="<%= survey._id %>">
                 <div class="form-group">
                     <label for="nameTextField">Survey Name</label>
-                    <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Survey Name"
-                    name="surveyName" 
-                    value="<%= survey.surveyName %>"
-                    required>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Survey Name"
+                        name="surveyName" value="<%= survey.surveyName %>" required>
                 </div>
                 <div class="form-group">
                     <label for="nameTextField">Survey Description</label>
-                    <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Survey Description"
-                    name="surveyDescription" 
-                    value="<%= survey.surveyDescription %>"
-                    required>
+                    <input type="text" class="form-control" id="nameTextField"
+                        placeholder="Enter the Survey Description" name="surveyDescription"
+                        value="<%= survey.surveyDescription %>" required>
                 </div>
+                <br>
+                <br>
+
+                <!------------------------------------------Section 2, setting date expiry----------------------------------------------->
+
+                <!-- DELETE ,  edit this with system date. check comments below in script section.-->
                 <div class="form-group">
                     <label for="creationDateField">Survey Creation Date</label>
-                    <input type="date" class="form-control"
-                    id="creationDateField"
-                    placeholder="Enter the Survey Creation Date"
-                    name="surveyCreationDate" 
-                    value="<%= survey.surveyCreationDate %>"
-                    required>
+                    <input type="date" class="form-control" id="creationDateField"
+                        placeholder="Enter the Survey Creation Date" name="surveyCreationDate"
+                        value="<%= survey.surveyCreationDate %>" required>
                 </div>
+
+                <!--setting expiry date-->
                 <div class="form-group">
                     <label for="surveyExpiryField">Survey Expiry Date</label>
-                    <input type="date" class="form-control"
-                    id="surveyExpiryField"
-                    placeholder="Enter the Survey Expiry Date"
-                    name="surveyExpiryDate" 
-                    value="<%= survey.surveyExpiryDate %>"
-                    required>
+                    <input type="date" class="form-control" id="surveyExpiryField"
+                        placeholder="Enter the Survey Expiry Date" name="surveyExpiryDate"
+                        value="<%= survey.surveyExpiryDate %>" required>
                 </div>
+
+                <!------------------------------------------Section 3, types of question we want to create.------------------------------->
+                <div>
+                    <h3>Survey Type</h3>
+                    <!--two Radio buttons.-->
+                    <label> <input type="radio" name="QuestionType" value="multipleChoice" id="choice_id">
+                        Multiple Choice</label> &emsp;
+
+                    <label> <input type="radio" name="QuestionType" value="shortAnswer" id="txt_id">
+                        Short Answer </label><p> after clicking submit, page should be re-routed to radio selection. on radio button use "onClick"</p>
+                </div>
+                <br>
+
+                <!---------------------------------------------submission and cancel buttons.----------------------------------------- ---->
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
-                
-                    <a href="/survey-list" class="btn btn-warning">
-                        <i class="fas fa-undo"></i> Cancel</a>
-                        <br>
-                        <br>
 
-<!------------------------------------------Question Type----------------------------------->
+                <a href="/survey-list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+
+                <!-- here we are testing our date ouput.  DELETE this section in the end.-->
+                <div>
+                    <br>
+                    <p id="onBrowserDate"></p>
+                    <p> this was printed using javascript, each numeric set is a single entity. 
+                        we can use this data in the background and replace above creation date field.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!---------------------------our script section -------------------------------->
+<script>
+    //broser location
+    var onBrowser = document.getElementById('onBrowserDate');
+
+    //date object
+    let currentDate = new Date();
+
+    //retrieving data from date object.
+    let cDate = currentDate.getDate();
+    let cMonth = currentDate.getMonth();
+    let cYear = currentDate.getFullYear();
+    let today = [cDate, cMonth, cYear].join()
+
+    onBrowser.innerHTML = "todays date is " + today;
+
+//alternatively, we can get the full date in JSON format.
+    /* let jSon = currentDate.toJSON
+    onBrowser.innerHTML = today;*/
+
+
+//how to compate dates, one method.
+    /* if (someday > today) {
+      text = "Today is before January 14, 2100.";
+    } else {
+      text = "Today is after January 14, 2100.";
+    } */
+
+</script>
+
+<!-------------------end of our script section. we can put this script else where.-->
+
+
+
+
+
+
+
+
+
+<!------------------------------------------Question Type-----------------------------------
                 <div class="container">
-        <!-- <h2>Survey Type</h2>
+         <h2>Survey Type</h2>
        <input type="radio" name="size" name="short">
        <label for="short">Short Answer</label>
        <input type="radio" name="size" name="multiple">
-       <label for="multiple">Multiple Choice</label> -->
+       <label for="multiple">Multiple Choice</label> 
          
         </div> 
                 <button class="btn btn-primary" >
@@ -131,21 +197,21 @@ Wilson Wu         3012453494 -->
             </form>
             
         </div> 
-<!----------------------------------------Question list------------------------------------------->
-       
-<!--------------------------------------------------------------------------------------------------->
+--------------------------------------Question list------------------------------------------->
+
+<!--------------------------------------------------------------------------------------------------
     </div>
 
-        <!-- <button class="btn btn-primary" onclick="myFunction()">
+         <button class="btn btn-primary" onclick="myFunction()">
             <i class="fas fa-add"></i> Short Answer</button>
             <div id="myDIV"> -->
-                <!-- <button class="btn btn-primary" >
+<!-- <button class="btn btn-primary" >
                     <i class="fas fa-add"></i> Short Answer</button> -->
-                  
+
 <!------------------------------------------------------------------------------------------------>
-<form class="form" method="POST">
+<!--<form class="form" method="POST">
     <input type="hidden" name="id" value="<%= survey._id %>" >
-    <!-- <div class="form-group">
+     <div class="form-group">
         <label for="nameTextField">Your Question</label>
         <input type="text" class="form-control"
         id="nameTextField"
@@ -155,19 +221,19 @@ Wilson Wu         3012453494 -->
         required>
     </div> -->
 
-    <!-- <button class="btn btn-primary" type="submit">
+<!-- <button class="btn btn-primary" type="submit">
         <i class="fas fa-edit"></i> Submit</button>
     
         <a href="/survey-list" class="btn btn-warning">
-            <i class="fas fa-undo"></i> Cancel</a> -->
+            <i class="fas fa-undo"></i> Cancel</a> 
 
 </form>
-<!---------------------There need one function for Multiple Choice Button--------------------->
-<br>
+-------------------There need one function for Multiple Choice Button-------------------
+<br>-->
 <!-- <button class="btn btn-primary">
     <i class="fas fa-add"></i> Multiple Choice</button>
     -->
-    <!-- <form class="form" method="POST">
+<!-- <form class="form" method="POST">
     <input type="hidden" name="id" value="<%= survey._id %>" >
     <div class="form-group">
         <label for="nameTextField">Your Question</label>
@@ -179,26 +245,19 @@ Wilson Wu         3012453494 -->
         required>
     </div> -->
 
-    <!-- <button class="btn btn-primary" type="submit">
+<!-- <button class="btn btn-primary" type="submit">
         <i class="fas fa-edit"></i> Submit</button>
     
         <a href="/survey-list" class="btn btn-warning">
-            <i class="fas fa-undo"></i> Cancel</a> -->
+            <i class="fas fa-undo"></i> Cancel</a> 
 
-</form>
-      
+</form>-->
+
 <!------------------------------------------------------------------------------------------------->
-                
-            
-                <!-- <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
+
+
+<!-- <button class="btn btn-primary"><i class="fas fa-add"></i> Add text box</button>
                 <button class="btn btn-primary"><i class="fas fa-add"></i> Add radio button</button>
-                <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button> -->
+                <button class="btn btn-primary"><i class="fas fa-add"></i> Add checkbox</button> 
             </div>
-</div>
-
-
-
-
-
-
-
+</div>-->
