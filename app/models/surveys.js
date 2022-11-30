@@ -31,7 +31,7 @@ export default mongoose.model('Survey', surveySchema);
 // testing new prototype scheema format.
 // we create two question type scheemas. one for options and one for short answers. 
 //The survery schema take an array type to store multiple questions of any type.
-/* 
+
 const optionsQuestion = new Schema({
     question : String,
     choice1 : String,
@@ -51,9 +51,7 @@ const surveySchemaFinal = new Schema({
     surveyDescription : String,
     surveyCreationDate : Date,
     surveyExpiryDate : Date,
-    
-    questions: [{optionsQuestion, questionScheema}]
 },{
     timestamps: true,
     collection:'surveys'
-}); */
+});
