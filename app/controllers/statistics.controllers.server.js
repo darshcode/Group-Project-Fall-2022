@@ -32,6 +32,6 @@ export function DisplayStatisticsList(req, res, next){
             res.end(err);
         }
 
-        res.render('index', {title: 'Statistics List', page: 'statistics/list', statistics: statisticsCollection, displayName: UserDisplayName(req)});
+        res.render('index', {title: 'Statistics List', page: 'statistics', statistics: statisticsCollection, displayName: UserDisplayName(req)});
     })
 }
