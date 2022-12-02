@@ -1,0 +1,71 @@
+<!-- Web App Name: Take The Survey
+File Name: statistics.ejs;
+Group Name: Team A+;
+Date: December 1st, 2022
+Student Name      Student ID
+Alex Tang         301238850
+Eva Fan           301238820
+Darshmeen Dhillon 300689994
+Faiyaz Muhammad   301227442
+Sheila Donnelly   822281549
+Wilson Wu         301243494 -->
+
+
+<div class="container">
+    <h1>Question List</h1>
+    <% if(displayName) { %>
+    <a href='/question-add/:id' class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Add a Question</a>
+        <% } %>
+    <div class="row">
+        <div class="col">
+    
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col">Question Description</th>
+                        <th scope="col">Question Response</th>
+
+                        <% if(displayName) { %>
+                        <th></th>
+                        <th></th>
+                        <% } %>
+                    </tr>
+                </thead>
+                <tbody id="questionList">
+                    <!-- Repeatable Rows -->
+                    <% for(let count = 0; count < questions.length; count++) { %>
+                        <tr>
+                            <th scope="row" class="text-center"><%= count + 1 %></th>
+                            <td><%= questions[count].questionDescription %></td>
+                            
+                            
+                            <!--
+                            
+                            ****SUM ALL RESPONSES HERE *****************
+                            
+                            td><%= responses[count].questionResponses %></td-->
+                           
+                          
+
+                            <% if(displayName) { %>
+                            <td class="text-center col-1">
+                                <a href="/question-edit/<%= questions[count]._id %>"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                            </td>
+                            
+                            <td class="text-center col-1">
+                                <a href="/question-delete/<%= questions[count]._id %>"
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+                            <% } %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
