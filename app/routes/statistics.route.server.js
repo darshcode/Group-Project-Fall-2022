@@ -16,7 +16,7 @@ Wilson Wu         301243494*/
 import { Router } from "express";
 
 //Importing functinos from 'index.controller.server' from controllers.
-import {DisplayStasticsList,
+import {DisplayStatisticsList,
      } from "../controllers/statistics.controller.server.js";
 import { AuthGuard } from "../utils/index.js";
 
