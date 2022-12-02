@@ -1,0 +1,53 @@
+
+<!-- Web App Name: Take The Survey
+File Name: responses.ejs;
+Group Name: Team A+;
+Date: December 1st, 2022
+Student Name      Student ID
+Alex Tang         301238850
+Eva Fan           301238820
+Darshmeen Dhillon 300689994
+Faiyaz Muhammad   301227442
+Sheila Donnelly   822281549
+Wilson Wu         3012453494 -->
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+        <h1><%= title %></h1>
+
+
+        <!--******TO UPDATE: NOT FORM ENTRY FOR QUESTION HERE****-->
+
+            <form class="form" method="POST">
+                <input type="hidden" name="id" value="<%= survey._id %>" >
+                <div class="form-group">
+                    <label for="nameTextField">Question Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Question Type"
+                    name="questionType" 
+                    value="<%= question.questionType %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nameTextField">Your Response</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Please Enter Your Reponse"
+                    name="responseDescription" 
+                    value="<%= response.responseDescription %>"
+                    required>
+                </div>
+                
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/response-list/" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                        
+                    </form>                          
+        </div> 
+    </div>    
+</div>
