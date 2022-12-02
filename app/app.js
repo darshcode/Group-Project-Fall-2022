@@ -48,7 +48,7 @@ import indexRouter from './routes/index.route.server.js';
 import surveyRouter from './routes/surveys.route.server.js';
 
 //Import Auth router
-import authRouther from './routes/auth.route.server.js';
+import authRouter from './routes/auth.route.server.js';
 
 //Import Question router
 import questionRouter from "./routes/questions.route.server.js";
@@ -98,7 +98,7 @@ passport.use(User.createStrategy());
 // Use Routes
 app.use('/', indexRouter);
 app.use('/', surveyRouter);
-app.use('/', authRouther);
+app.use('/', authRouter);
 app.use('/', questionRouter);
 
 //Auth Step 8 - Setup serialization and deserialization
