@@ -38,6 +38,7 @@ router.post('/survey-add', AuthGuard, ProcessSurveysAddPage);
 router.post('/survey-edit/:id', AuthGuard, ProcessSurveysEditPage);
 router.get('/survey-edit/:id', AuthGuard, DisplaySurveysEditPage);
 router.get('/survey-delete/:id', AuthGuard, ProcessSurveysDelete);
+//router.post('/survey-edit/:id'),AuthGuard, 
 
 //this router is now exportable and can be used.
 export default router;

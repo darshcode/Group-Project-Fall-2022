@@ -78,6 +78,7 @@ export function DisplaySurveysEditPage(req, res, next){
 export function ProcessSurveysEditPage(req, res, next){
 
     let id = req.params.id;
+   
     
     let newSurvey = surveyModel({
         _id: req.body.id,
@@ -88,7 +89,8 @@ export function ProcessSurveysEditPage(req, res, next){
         questionType: req.body.questionType,
         questionTypeOne: req.body.questionTypeOne,
         questionTypeTwo: req.body.questionTypeTwo
-    });
+        
+    });console.log(req.body.QuestionType);
 
     surveyModel.updateOne({_id: id }, newSurvey, (err, Survey) => {
         if(err){
@@ -96,7 +98,13 @@ export function ProcessSurveysEditPage(req, res, next){
             res.end(err);
         };
 
-        res.redirect('/survey-list')
+       // res.redirect('/survey-list')
+       if(req.body.QuestionType === 'multipleChoice'){
+        res.render('content/surveys/multipleChoice');
+       }
+     
+       else
+       res.render('content/surveys/shortAns');
     } )
 }
 
