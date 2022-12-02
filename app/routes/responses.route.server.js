@@ -17,19 +17,25 @@ import { Router } from "express";
 
 //Importing functinos from 'index.controller.server' from controllers.
 import {DisplayQuestionsList,
-    DisplayQuestionsAddPage,
-    ProcessQuestionsAddPage 
-     } from "../controllers/questions.controller.server.js";
+    DisplayResponsesAddPage,
+    ProcessResponsesAddPage 
+     } from "../controllers/responses.controller.server.js";
 import { AuthGuard } from "../utils/index.js";
 
     // Intanciating the router from the imported package above
 const router = Router();
 
-//add middleware
-router.get('/responses-list/:id', DisplayResponsesList);
-router.get('/responses-add/:id', AuthGuard, DisplayREsponsessAddPage);
-router.post('/responses-add/:id', AuthGuard, ProcessResponsesAddPage);
 
+// add middleware to connect application
+//Should learn more about router instance.
+//the part after the router is the VERB: POST, GET, PUT, DELETE, PATCH.
+//the first part after get is the route followed by function.
+router.get('/question-list/:id', DisplayQuestionsList);
+router.get('/response-add/:id', AuthGuard, DisplayResponsesAddPage);
+router.post('/response-add/:id', AuthGuard, ProcessResponsesAddPage);
+// router.post('/survey-edit/:id', AuthGuard, ProcessSurveysEditPage);
+// router.get('/survey-edit/:id', AuthGuard, DisplaySurveysEditPage);
+// router.get('/survey-delete/:id', AuthGuard, ProcessSurveysDelete);
 
 //this router is now exportable and can be used.
 export default router;
