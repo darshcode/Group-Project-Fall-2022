@@ -10,7 +10,7 @@ Faiyaz Muhammad   301227442
 Sheila Donnelly   822281549
 Wilson Wu         301243494*/
 
-import statisticsModel from '../models/statistics.js';
+import responsesModel from '../models/responsess.js';
 import surveyModel from '../models/surveys.js';
 
 // import DisplayName Utility method
