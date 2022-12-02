@@ -27,14 +27,14 @@ import { UserDisplayName } from '../utils/index.js';
 //also notice that the part in {curly braces is in jason format}.
 //finally notice the page: home. this is another variable were passing to index.ejs in the main article. by using this we can refer to the right page.
 
-export function DisplayResponsesList(req, res, next){
-    responsesModel.find(function(err, responsesCollection) {
+export function DisplayQuestionsList(req, res, next){
+    questionModel.find(function(err, questionsCollection) {
         if(err){
             console.error(err);
             res.end(err);
         }
 
-        res.render('index', {title: 'Responses List', page: 'responses/list', responses: responsesCollection, displayName: UserDisplayName(req)});
+        res.render('index', {title: 'Question List', page: 'questions/list', questions: questionsCollection, displayName: UserDisplayName(req)});
     })
 }
 
@@ -42,10 +42,10 @@ export function DisplayResponsesAddPage(req, res, next){
     res.render('index', { title: 'Add Response', page: 'response/edit', survey : {} ,response: {}, displayName: UserDisplayName(req) });
 }
 
-export function ProcessQuestionsAddPage(req, res, next){
+export function ProcessReponsesAddPage(req, res, next){
     
     let newResponse = responseModel({
-        responseDescription : req.body.questionDescription,
+        responseDescription : req.body.responseDescription,
         
         
     });
