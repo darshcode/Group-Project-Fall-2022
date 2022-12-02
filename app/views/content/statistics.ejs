@@ -12,10 +12,10 @@ Wilson Wu         301243494 -->
 
 
 <div class="container">
-    <h1>Question List</h1>
+    <h1>Statistics List</h1>
     <% if(displayName) { %>
-    <a href='/question-add/:id' class="btn btn-primary" role="button">
-        <i class="fas fa-plus-circle"></i> Add a Question</a>
+    <a href='/statistics-add/:id' class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> View Survey Statistics</a>
         <% } %>
     <div class="row">
         <div class="col">
@@ -25,7 +25,7 @@ Wilson Wu         301243494 -->
                     <tr>
                         <th scope="col" class="text-center">#</th>
                         <th scope="col">Question Description</th>
-                        <th scope="col">Question Response</th>
+                        <th scope="col">User Responses</th>
 
                         <% if(displayName) { %>
                         <th></th>
@@ -46,21 +46,7 @@ Wilson Wu         301243494 -->
                             ****SUM ALL RESPONSES HERE *****************
                             
                             td><%= responses[count].questionResponses %></td-->
-                           
                           
-
-                            <% if(displayName) { %>
-                            <td class="text-center col-1">
-                                <a href="/question-edit/<%= questions[count]._id %>"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i> Edit</a>
-                            </td>
-                            
-                            <td class="text-center col-1">
-                                <a href="/question-delete/<%= questions[count]._id %>"
-                                    class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i> Delete</a>
-                            </td>
                             <% } %>
                         </tr>
                     <% } %>
