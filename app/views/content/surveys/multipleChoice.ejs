@@ -1,7 +1,111 @@
 <div>
-    <p>enter multiple choice questions.</p>
-    <label><input type="radio" name="options" > option 1</label><br>
-    <label><input type="radio" name="options" > option 2</label><br>
-    <label><input type="radio" name="options" > option 3</label><br>
-    <label><input type="radio" name="options" > option 4</label><br>
+    <div>
+        <p>enter multiple choice questions.</p>
+
+        <!------- four Radio Buttons with updating labels. -------->
+
+        <table>
+            <tr>
+                <td><input type="radio" name="options">
+                    <label id="radioLabel1"> option 1</label>
+                </td>
+                <td>
+                    <input type="text" id="option1" maxlength="15" hidden>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="options">
+                    <label id="radioLabel2"> option 2</label>
+                </td>
+                <td>
+                    <input type="text" id="option2" maxlength="15" hidden>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="options">
+                    <label id="radioLabel3"> option 3</label>
+                </td>
+                <td>
+                    <input type="text" id="option3" maxlength="15" hidden>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="options">
+                    <label id="radioLabel4"> option 4</label>
+                </td>
+                <td>
+                    <input type="text" id="option4" maxlength="15" hidden>
+
+                </td>
+            </tr>
+
+        </table>
+
+
+
+
+
+
+
+
+    </div>
+
+    <!------- edit and update button. -------->
+    <div>
+        <input type="button" value="Edit" id="editBtn">
+        <input type="button" value="Update" id="updateBtn">
+    </div>
 </div>
+
+
+
+
+<!--sciptfiles-->
+<script>
+    //buttons
+    var editBtn = document.getElementById("editBtn");
+    var updateBtn = document.getElementById("updateBtn");
+
+
+    //hidden text fields
+    var option1 = document.getElementById("option1");
+    var option2 = document.getElementById("option2");
+    var option3 = document.getElementById("option3");
+    var option4 = document.getElementById("option4");
+
+    //radio fields
+    var radioLabel1 = document.getElementById("radioLabel1");
+    var radioLabel2 = document.getElementById("radioLabel2");
+    var radioLabel3 = document.getElementById("radioLabel3");
+    var radioLabel4 = document.getElementById("radioLabel4");
+
+    //event listner
+    editBtn.addEventListener("click", showFields);
+    updateBtn.addEventListener("click", completeFields);
+
+    //functions
+    function showFields() {
+        var visibilityIs = false;
+        option1.hidden = visibilityIs;
+        option2.hidden = visibilityIs;
+        option3.hidden = visibilityIs;
+        option4.hidden = visibilityIs;
+    }
+
+    function completeFields() {
+        var visibilityIs = true;
+
+        radioLabel1.innerHTML = option1.value;
+        radioLabel2.innerHTML = option2.value;
+        radioLabel3.innerHTML = option3.value;
+        radioLabel4.innerHTML = option4.value;
+
+        option1.hidden = visibilityIs;
+        option2.hidden = visibilityIs;
+        option3.hidden = visibilityIs;
+        option4.hidden = visibilityIs;
+    }
+
+</script>
