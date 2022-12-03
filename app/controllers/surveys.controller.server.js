@@ -87,8 +87,7 @@ export function ProcessSurveysEditPage(req, res, next){
         surveyCreationDate : req.body.surveyCreationDate,
         surveyExpiryDate : req.body.surveyExpiryDate,
         questionType: req.body.questionType,
-        questionTypeOne: req.body.questionTypeOne,
-        questionTypeTwo: req.body.questionTypeTwo
+        
         
     });console.log(req.body.QuestionType);
 
@@ -100,7 +99,8 @@ export function ProcessSurveysEditPage(req, res, next){
 
        // res.redirect('/survey-list')
        if(req.body.QuestionType === 'multipleChoice'){
-        res.render('content/surveys/multipleChoice');
+        res.render('index', { title: 'Multiple Choice', page: 'surveys/multipleChoice', displayName: UserDisplayName(req)});
+
        }
      
        else

@@ -1,12 +1,16 @@
-<div>
+<form>
     <div>
         <p>enter multiple choice questions.</p>
 
-        <!------- four Radio Buttons with updating labels. -------->
+        <!--question-->
+        <label>Question <br>
+            <input type="text" name="question"> </label>
+        <br>
 
+        <!------- four Radio Buttons with updating labels. -------->
         <table>
             <tr>
-                <td><input type="radio" name="options">
+                <td>
                     <label id="radioLabel1"> option 1</label>
                 </td>
                 <td>
@@ -14,7 +18,7 @@
                 </td>
             </tr>
             <tr>
-                <td><input type="radio" name="options">
+                <td>
                     <label id="radioLabel2"> option 2</label>
                 </td>
                 <td>
@@ -23,7 +27,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="radio" name="options">
+                    
                     <label id="radioLabel3"> option 3</label>
                 </td>
                 <td>
@@ -32,24 +36,15 @@
             </tr>
             <tr>
                 <td>
-                    <input type="radio" name="options">
-                    <label id="radioLabel4"> option 4</label>
+                    
+                    <label id="radioLabel4" na> option 4</label>
                 </td>
                 <td>
                     <input type="text" id="option4" maxlength="15" hidden>
 
                 </td>
             </tr>
-
         </table>
-
-
-
-
-
-
-
-
     </div>
 
     <!------- edit and update button. -------->
@@ -57,12 +52,13 @@
         <input type="button" value="Edit" id="editBtn">
         <input type="button" value="Update" id="updateBtn">
     </div>
-</div>
+
+</form>
 
 
 
 
-<!--sciptfiles-->
+<!-------scipt files------->
 <script>
     //buttons
     var editBtn = document.getElementById("editBtn");
