@@ -17,6 +17,7 @@ const Schema = mongoose.Schema;
 const questionSchema = new Schema({
     questionType : String,
     questionDescription : String,
+    //***To add as per prof ---> surveyID : String
 
 
 
