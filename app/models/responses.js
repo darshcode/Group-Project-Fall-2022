@@ -15,7 +15,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const responseSchema = new Schema({
-    responseDescription
+    questionDescription : String,
+    responseDescription : String,
+    questionID : String
 
     // Survey content is TBD
 
