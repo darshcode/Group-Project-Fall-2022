@@ -27,35 +27,35 @@ import { UserDisplayName } from '../utils/index.js';
 //also notice that the part in {curly braces is in jason format}.
 //finally notice the page: home. this is another variable were passing to index.ejs in the main article. by using this we can refer to the right page.
 
-export function DisplayQuestionsList(req, res, next){
-    questionModel.find(function(err, questionsCollection) {
-        if(err){
+export function DisplayQuestionsList(req, res, next) {
+    questionModel.find(function (err, questionsCollection) {
+        if (err) {
             console.error(err);
             res.end(err);
         }
 
-        res.render('index', {title: 'Question List', page: 'questions/list', questions: questionsCollection, displayName: UserDisplayName(req)});
+        res.render('index', { title: 'Question List', page: 'questions/list', questions: questionsCollection, displayName: UserDisplayName(req) });
     })
 }
 
-export function DisplayResponsesAddPage(req, res, next){
-    res.render('index', { title: 'Add Response', page: 'response/edit', survey : {} ,response: {}, displayName: UserDisplayName(req) });
+export function DisplayResponsesAddPage(req, res, next) {
+    res.render('index', { title: 'Add Response', page: 'response/edit', survey: {}, response: {}, displayName: UserDisplayName(req) });
 }
 
-export function ProcessReponsesAddPage(req, res, next){
-    
+export function ProcessReponsesAddPage(req, res, next) {
+
     let newResponse = responseModel({
-        responseDescription : req.body.responseDescription,
-        
-        
+        responseDescription: req.body.responseDescription,
+
+
     });
 
     responseModel.create(newResponse, (err, Response) => {
-        if(err){
+        if (err) {
             console.error(err);
             res.end(err);
         };
 
         res.redirect("/response-list/:id")
-    } )
+    })
 }

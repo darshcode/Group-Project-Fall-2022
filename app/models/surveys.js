@@ -17,10 +17,8 @@ const Schema = mongoose.Schema;
 const surveySchema = new Schema({
     surveyName : String,
     surveyDescription : String,
-    surveyCreationDate : Date,
-    surveyExpiryDate : Date,
-    questionType: String,
-    questionTypeOne: String,
+    surveyCreationDate : Date, // default: date.now
+    surveyExpiryDate : Date
 },{
     timestamps: true,
     collection:'surveys'
@@ -28,30 +26,3 @@ const surveySchema = new Schema({
 
 export default mongoose.model('Survey', surveySchema);
 
-// testing new prototype scheema format.
-// we create two question type scheemas. one for options and one for short answers. 
-//The survery schema take an array type to store multiple questions of any type.
-
-const optionsQuestion = new Schema({
-    question : String,
-    choice1 : String,
-    choice2 : String,
-    choice3 : String,
-    choice4 : String
-})
-
-const questionScheema = new Schema({
-    question : String,
-    Answers : String
-})
-
-//im using the above two models as variables here.
-const surveySchemaFinal = new Schema({
-    surveyName : String,
-    surveyDescription : String,
-    surveyCreationDate : Date,
-    surveyExpiryDate : Date,
-},{
-    timestamps: true,
-    collection:'surveys'
-});

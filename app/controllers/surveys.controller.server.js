@@ -104,7 +104,7 @@ export function ProcessSurveysEditPage(req, res, next){
        }
      
        else
-       res.render('content/surveys/shortAns');
+       res.render('index', { title: 'Short Answers', page: 'surveys/shortAns', displayName: UserDisplayName(req)});
     } )
 }
 

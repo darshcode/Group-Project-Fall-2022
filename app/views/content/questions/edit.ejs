@@ -1,4 +1,3 @@
-
 <!-- Web App Name: Take The Survey
 File Name: edit.ejs;
 Group Name: Team A+;
@@ -14,51 +13,31 @@ Wilson Wu         3012453494 -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-        <h1><%= title %></h1>
+            <h1>
+                <%= title %>
+            </h1>
 
             <form class="form" method="POST">
-                <input type="hidden" name="id" value="<%= survey._id %>" >
+                <input type="hidden" name="id" value="<%= survey._id %>">
                 <div class="form-group">
                     <label for="nameTextField">Question Name</label>
-                    <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Question Type"
-                    name="questionType" 
-                    value="<%= question.questionType %>"
-                    required>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Question Type"
+                        name="questionType" value="<%= question.questionType %>" required>
                 </div>
                 <div class="form-group">
                     <label for="nameTextField">Question Description</label>
-                    <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Question Description"
-                    name="questionDescription" 
-                    value="<%= question.questionDescription %>"
-                    required>
+                    <input type="text" class="form-control" id="nameTextField"
+                        placeholder="Enter the Question Description" name="questionDescription"
+                        value="<%= question.questionDescription %>" required>
                 </div>
-                
+
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
-                
-                    <a href="/question-list/" class="btn btn-warning">
-                        <i class="fas fa-undo"></i> Cancel</a>
-                
-                    
-                                 
-                    </form>                          
-        </div> 
-    </div>    
+
+                <a href="/question-list/" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+    </div>
 </div>
-
-
-
-
-      
-
-
-
-
-
-
-
-

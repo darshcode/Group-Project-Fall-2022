@@ -27,10 +27,7 @@
                             <th scope="row" class="text-center"><%= count + 1 %></th>
                             <td><%= questions[count].questionType %></td>
                             <td><%= questions[count].questionDescription %></td>
-                           
-                            
-                          
-
+                        
                             <% if(displayName) { %>
                             <td class="text-center col-1">
                                 <a href="/question-edit/<%= questions[count]._id %>"
