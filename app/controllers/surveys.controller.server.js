@@ -103,8 +103,12 @@ export function ProcessSurveysEditPage(req, res, next){
 
        }
      
-       else
+       else if(req.body.QuestionType === 'shortAnswer'){
        res.render('index', { title: 'Short Answers', page: 'surveys/shortAns', displayName: UserDisplayName(req)});
+       }
+
+       else
+       res.redirect('/survey-list');
     } )
 }
 
