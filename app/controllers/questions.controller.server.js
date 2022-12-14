@@ -56,53 +56,51 @@ export function ProcessQuestionsAddPage(req, res, next){
     } )
 }
 
-// export function DisplaySurveysEditPage(req, res, next){
+// export function DisplayQuestionsEditPage(req, res, next){
 //     let id = req.params.id;
 
-//     surveyModel.findById(id, (err, survey) => {
+//     questionModel.findById(id, (err, question) => {
 //         if(err){
 //             console.error(err);
 //             res.end(err);
 //         }
 
-//         res.render('index', { title: 'Edit Survey', page: 'surveys/edit', survey: survey, displayName: UserDisplayName(req) });
+//         res.render('index', { title: 'Edit Question', page: 'questions/edit', question: question, displayName: UserDisplayName(req) });
 //     });    
 // }
 
-// export function ProcessSurveysEditPage(req, res, next){
+// export function ProcessQuestionsEditPage(req, res, next){
 
 //     let id = req.params.id;
     
-//     let newSurvey = surveyModel({
+//     let newQuestion = questionModel({
 //         _id: req.body.id,
-//         surveyName: req.body.surveyName,
-//         surveyDescription : req.body.surveyDescription,
-//         surveyCreationDate : req.body.surveyCreationDate,
-//         surveyExpiryDate : req.body.surveyExpiryDate,
+//         questionDescription : req.body.surveyDescription,
+
 //         questionType: req.body.questionType,
 //         questionTypeOne: req.body.questionTypeOne,
 //         questionTypeTwo: req.body.questionTypeTwo
 //     });
 
-//     surveyModel.updateOne({_id: id }, newSurvey, (err, Survey) => {
+//     questionsModel.updateOne({_id: id }, newQuestion, (err, Question) => {
 //         if(err){
 //             console.error(err);
 //             res.end(err);
 //         };
 
-//         res.redirect('/survey-list')
+//         res.redirect('/qustion-list')
 //     } )
 // }
 
-// export function ProcessSurveysDelete(req, res, next){
+// export function ProcessQuestionsDelete(req, res, next){
 //     let id = req.params.id;
 
-//     surveyModel.remove({_id: id}, (err) => {
+//     questionModel.remove({_id: id}, (err) => {
 //         if (err){
 //             console.error(err);
 //             res.end(err);
 //         }
 
-//         res.redirect('/survey-list');
+//         res.redirect('/question-list');
 //     })
 // }
