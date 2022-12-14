@@ -10,7 +10,7 @@ Faiyaz Muhammad   301227442
 Sheila Donnelly   822281549
 Wilson Wu         301243494*/
 
-import questionModel from '../models/questions.js';
+import questionModel from '../models/shortScheema.js';
 import surveyModel from '../models/surveys.js';
 
 // import DisplayName Utility method
@@ -45,8 +45,6 @@ export function ProcessQuestionsAddPage(req, res, next){
     let newQuestion = questionModel({
         questionType: req.body.questionType,
         questionDescription : req.body.questionDescription,
-        
-        
     });
 
     questionModel.create(newQuestion, (err, Question) => {
@@ -54,7 +52,6 @@ export function ProcessQuestionsAddPage(req, res, next){
             console.error(err);
             res.end(err);
         };
-
         res.redirect("/question-list/:id")
     } )
 }

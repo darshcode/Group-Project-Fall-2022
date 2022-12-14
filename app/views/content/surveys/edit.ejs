@@ -49,7 +49,7 @@ Wilson Wu         3012453494 -->
                 <br>
 
                 <!--setting expiry date-->
-                
+
                 <div class="form-group">
                     <label for="surveyExpiryField">Survey Expiry Date</label>
                     <input type="date" class="form-control" id="surveyExpiryField"
@@ -67,7 +67,8 @@ Wilson Wu         3012453494 -->
                         Multiple Choice</label> &emsp;
 
                     <label> <input type="radio" name="QuestionType" value="shortAnswer" id="txt_id">
-                        Short Answer </label><p> after clicking submit, page should be re-routed to radio selection. on radio button use "onClick"</p>
+                        Short Answer </label>
+
                 </div>
                 <br>
 
@@ -77,41 +78,20 @@ Wilson Wu         3012453494 -->
 
                 <a href="/survey-list" class="btn btn-warning">
                     <i class="fas fa-undo"></i> Cancel</a>
-
-                <!-- here we are testing our date ouput.  DELETE this section in the end.-->
-                <div>
-                    <br>
-                    <p id="onBrowserDate"></p>
-                    <p> this was printed using javascript, each numeric set is a single entity. 
-                        we can use this data in the background and replace above creation date field.</p>
-                      
-                </div>
-                
-          
-               
-               <p></p>
-               
-
-
             </form>
+
+            <p id="AutoDateCompleteTest"> </p>
         </div>
     </div>
 </div>
 
 
-
-
-
 <!---------------------------our script section -------------------------------->
 <script>
 
-let choiceVar = document.getElementById("choice_id");
-choiceVar.addEventListener(onclick, )
-
-
-
     //broser location
-    var onBrowser = document.getElementById('onBrowserDate');
+    var creationDateField = document.getElementById('creationDateField');
+    var onBrowser = document.getElementById('AutoDateCompleteTest');
 
     //date object
     let currentDate = new Date();
@@ -120,36 +100,17 @@ choiceVar.addEventListener(onclick, )
     let cDate = currentDate.getDate();
     let cMonth = currentDate.getMonth();
     let cYear = currentDate.getFullYear();
-    let today = [cDate, cMonth, cYear].join()
+    let today = [cYear + '-' + cMonth + '-' + cDate].join()
 
+    //used for setting creation date automatically.
+    creationDateField.value = today;
+
+    //used for reference.
     onBrowser.innerHTML = "todays date is " + today;
-
-
-
-
-//alternatively, we can get the full date in JSON format.
-    /* let jSon = currentDate.toJSON
-    onBrowser.innerHTML = today;*/
- let choice =document.getElementById(choice_id);
-   
-
-//how to compate dates, one method.
-    /* if (someday > today) {
-      text = "Today is before January 14, 2100.";
-    } else {
-      text = "Today is after January 14, 2100.";
-    } */
 
 </script>
 
 <!-------------------end of our script section. we can put this script else where.-->
-
-
-
-
-
-
-
 
 
 <!------------------------------------------Question Type-----------------------------------

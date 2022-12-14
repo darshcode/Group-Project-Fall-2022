@@ -13,16 +13,17 @@ Wilson Wu         301243494*/
 // Index Routes
 //importing router from express and importing functinos from controller section.
 import { Router } from 'express';
-import { displayHomePage, 
-    } from '../controllers/index.controller.server.js'
+import {
+    displayHomePage,
+} from '../controllers/index.controller.server.js'
 
 // Intanciating the router
 const router = Router();
 
 // add middleware to connect application
 //the first part after get is the route followed by function.
-router.get('/',displayHomePage);
-router.get('/home',displayHomePage);
+router.get('/', displayHomePage);
+router.get('/home', displayHomePage);
 
 
 

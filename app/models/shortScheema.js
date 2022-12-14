@@ -1,7 +1,7 @@
 /*Web App Name: Take The Survey
 File Name: surverys.js;
 Group Name: Team A+;
-Date: November 26, 2022
+Date: November 10, 2022
 Student Name      Student ID
 Alex Tang         301238850
 Eva Fan           301238820
@@ -14,15 +14,14 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const surveySchema = new Schema({
-    surveyName : String,
-    surveyDescription : String,
-    surveyCreationDate : Date, // default: date.now()
-    surveyExpiryDate : Date
+const shortSchema = new Schema({
+    question : String,
+    answer : String
 },{
     timestamps: true,
-    collection:'surveys'
+    collection:'shortQ'
 });
 
-export default mongoose.model('Survey', surveySchema);
+export default mongoose.model('shortSchema', shortSchema);
+
 

@@ -1,0 +1,51 @@
+<div class="container">
+    <p>Enter multiple choice questions.</p>
+
+    <form method="post">
+        <!--question-->
+        <label>Question <br>
+            <input type="text" name="question" value="<%= optionsScheema.question %>"> </label>
+        <br><br>
+
+        <!------- four Radio Buttons with updating labels. -------->
+        <table>
+            <tr>
+                <td>
+                    <label id="radioLabel1"><input type="radio" name="options">abc
+                        
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label id="radioLabel2"><input type="radio" name="options">
+                        
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label id="radioLabel3"><input type="radio" name="options">
+                        
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label id="radioLabel4"><input type="radio" name="options">
+                        
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+        <!------- edit and update button. -------->
+        <div>
+            <input type="button" value="Edit" id="editBtn">
+            <input type="submit" value="Update" id="updateBtn">
+        </div>
+</form>
+</div>
